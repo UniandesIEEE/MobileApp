@@ -23,10 +23,84 @@
  */
 package com.ieeeuniandes.backend.entities;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
 /**
  *
  * @author juanm
  */
+@Entity
 public class UserEntity {
+   
+    /**
+     * ID de usuario
+     */
+    @Id
+    private Long id;
+    
+    /**
+     * Nombre de usuario
+     */
+    private String nombre;
+    
+    /**
+     * Login de usuario
+     */
+    private String login;
+    
+    /**
+     * Contraseña de usuario
+     */
+    private String contrasenia;
+    
+    /**
+     * Puntaje de usuario
+     */
+    private Integer puntaje;
+
+    public UserEntity() {
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public String getLogin() {
+        return login;
+    }
+
+    public void setLogin(String login) {
+        this.login = login;
+    }
+
+    public String getContrasenia() {
+        return contrasenia;
+    }
+
+    public void setContrasenia(String contrasenia) {
+        this.contrasenia = contrasenia;
+    }
+
+    public Integer getPuntaje() {
+        return puntaje;
+    }
+
+    public void setPuntaje(Integer puntaje) {
+        this.puntaje = puntaje;
+    }
+    
     
 }
