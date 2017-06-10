@@ -23,9 +23,12 @@
  */
 package com.ieeeuniandes.backend.entities;
 
+import java.util.ArrayList;
+import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 
 /**
  *
@@ -45,6 +48,18 @@ public class CategoryEntity {
      * Nombre de la categoría
      */
     private String nombre;
+    
+    /**
+     * Usuarios relacionados con la categoría
+     */
+    @ManyToMany(mappedBy = "preferencias")
+    private List<UserEntity> usuarios = new ArrayList<UserEntity>();
+    
+    /**
+     * Eventos relacionados con la categoría
+     */
+    @ManyToMany(mappedBy = "categorias")
+    private List<EventEntity> eventos = new ArrayList<EventEntity>();
 
     public CategoryEntity() {
     }
@@ -64,6 +79,21 @@ public class CategoryEntity {
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
-    
+
+    public List<UserEntity> getUsuarios() {
+        return usuarios;
+    }
+
+    public void setUsuarios(List<UserEntity> usuarios) {
+        this.usuarios = usuarios;
+    }
+
+    public List<EventEntity> getEventos() {
+        return eventos;
+    }
+
+    public void setEventos(List<EventEntity> eventos) {
+        this.eventos = eventos;
+    }
     
 }

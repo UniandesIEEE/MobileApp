@@ -24,9 +24,12 @@
 package com.ieeeuniandes.backend.entities;
 
 import java.sql.Timestamp;
+import java.util.ArrayList;
+import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
@@ -69,6 +72,12 @@ public class EventEntity {
      * Descripción del evento
      */
     private String descripcion;
+    
+    /**
+     * Lista de categorias sobre las cuales esta enmarcado el evento
+     */
+    @ManyToMany(mappedBy = "eventos")
+    private List<CategoryEntity> categorias = new ArrayList<CategoryEntity>();
 
     public EventEntity() {
     }
@@ -119,6 +128,14 @@ public class EventEntity {
 
     public void setDescripcion(String descripcion) {
         this.descripcion = descripcion;
+    }
+
+    public List<CategoryEntity> getCategorias() {
+        return categorias;
+    }
+
+    public void setCategorias(List<CategoryEntity> categorias) {
+        this.categorias = categorias;
     }
     
 }

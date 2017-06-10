@@ -23,8 +23,11 @@
  */
 package com.ieeeuniandes.backend.entities;
 
+import java.util.ArrayList;
+import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 
 /**
  *
@@ -58,6 +61,12 @@ public class UserEntity {
      * Puntaje de usuario
      */
     private Integer puntaje;
+    
+    /**
+     * Categorías de preferencia
+     */
+    @ManyToMany(mappedBy = "usuarios")
+    private List<CategoryEntity> preferencias = new ArrayList<CategoryEntity>();
 
     public UserEntity() {
     }
@@ -100,6 +109,14 @@ public class UserEntity {
 
     public void setPuntaje(Integer puntaje) {
         this.puntaje = puntaje;
+    }
+
+    public List<CategoryEntity> getPreferencias() {
+        return preferencias;
+    }
+
+    public void setPreferencias(List<CategoryEntity> preferencias) {
+        this.preferencias = preferencias;
     }
     
     
