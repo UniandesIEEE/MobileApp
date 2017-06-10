@@ -23,7 +23,6 @@
  */
 package com.ieeeuniandes.backend.persistence;
 
-import com.ieeeuniandes.backend.entities.CategoryEntity;
 import com.ieeeuniandes.backend.entities.UserEntity;
 import java.util.List;
 import javax.ejb.Stateless;

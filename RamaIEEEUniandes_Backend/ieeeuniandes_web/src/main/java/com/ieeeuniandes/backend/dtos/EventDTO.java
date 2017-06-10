@@ -21,45 +21,12 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-package com.ieeeuniandes.backend.persistence;
-
-import com.ieeeuniandes.backend.entities.EventEntity;
-import java.util.List;
-import javax.ejb.Stateless;
-import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
-import javax.persistence.TypedQuery;
+package com.ieeeuniandes.backend.dtos;
 
 /**
  *
  * @author juanm
  */
-@Stateless
-public class EventPersistence {
-    @PersistenceContext(unitName = "ieeeuniandesPU")
-    protected EntityManager em;
+public class EventDTO {
     
-    public EventEntity find(Long id){
-        return em.find(EventEntity.class, id);
-    }
-    
-    public List<EventEntity> findAll(){
-        TypedQuery<EventEntity> q = em.createQuery(
-        "select u from EventEntity u",EventEntity.class);
-        return q.getResultList();
-    }
-    
-    public EventEntity create(EventEntity e){
-        em.persist(e);
-        return e;
-    }
-    
-    public EventEntity update(EventEntity e){
-        return em.merge(e);
-    }
-    
-    public void delete(Long id){
-        EventEntity e = em.find(EventEntity.class, id);
-        em.remove(e);
-    }
 }
