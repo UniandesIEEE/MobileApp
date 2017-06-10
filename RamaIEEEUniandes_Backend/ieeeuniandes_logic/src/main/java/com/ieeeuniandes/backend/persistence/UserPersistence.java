@@ -23,10 +23,44 @@
  */
 package com.ieeeuniandes.backend.persistence;
 
+import com.ieeeuniandes.backend.entities.CategoryEntity;
+import com.ieeeuniandes.backend.entities.UserEntity;
+import java.util.List;
+import javax.ejb.Stateless;
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+import javax.persistence.TypedQuery;
+
 /**
  *
  * @author juanm
  */
+@Stateless
 public class UserPersistence {
+    @PersistenceContext(unitName = "ieeeuniandesPU")
+    protected EntityManager em;
     
+    public UserEntity find(Long id){
+        return em.find(UserEntity.class, id);
+    }
+    
+    public List<UserEntity> findAll(){
+        TypedQuery<UserEntity> q = em.createQuery
+        ("select u from UserEntity u",UserEntity.class);
+        return q.getResultList();
+    }
+    
+    public UserEntity create(UserEntity e){
+        em.persist(e);
+        return e;
+    }
+    
+    public UserEntity update(UserEntity e){
+        return em.merge(e);
+    }
+    
+    public void delete(Long id){
+        UserEntity e = em.find(UserEntity.class, id);
+        em.remove(e);
+    }
 }

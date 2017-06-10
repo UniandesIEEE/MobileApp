@@ -14,7 +14,7 @@ import javax.persistence.Id;
  * @author juanm
  */
 @Entity
-public class CategoriaEntity {
+public class CategoryEntity {
     
     /**
      * ID de la categoría
@@ -28,7 +28,7 @@ public class CategoriaEntity {
      */
     private String nombre;
 
-    public CategoriaEntity() {
+    public CategoryEntity() {
     }
 
     public Long getId() {

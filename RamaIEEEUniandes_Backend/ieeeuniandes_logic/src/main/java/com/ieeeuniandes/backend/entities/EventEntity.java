@@ -121,5 +121,4 @@ public class EventEntity {
         this.descripcion = descripcion;
     }
     
-    
 }
