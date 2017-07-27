@@ -16,6 +16,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TableLayout;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import ramaieeeuniandes.ramaieeeuniandes.R;
@@ -27,9 +28,11 @@ public class ActivityRamaMain extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
     //Data Management
-    private User user;
+    private static User mainUser;
 
     private static List<Event> events;
+
+    private static List<User> users;
 
     //UI Management
     private TabLayout tabLayout;
@@ -64,6 +67,12 @@ public class ActivityRamaMain extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+        //Attribute initialization
+        users = new ArrayList<>();
+        mainUser = new User();
+        events = new ArrayList<>();
+        mainUser.setMyEvents(events);
 
         //UI Management
 
@@ -133,5 +142,13 @@ public class ActivityRamaMain extends AppCompatActivity
 
     public static List<Event> getEvents(){
         return events;
+    }
+
+    public static List<User> getUsers(){
+        return users;
+    }
+
+    public static User getMainUser() {
+        return mainUser;
     }
 }

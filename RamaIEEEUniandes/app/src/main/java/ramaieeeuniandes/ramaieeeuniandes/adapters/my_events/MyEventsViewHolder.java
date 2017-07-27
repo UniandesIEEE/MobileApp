@@ -1,4 +1,4 @@
-package ramaieeeuniandes.ramaieeeuniandes.adapters.events;
+package ramaieeeuniandes.ramaieeeuniandes.adapters.my_events;
 
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
@@ -15,7 +15,7 @@ import ramaieeeuniandes.ramaieeeuniandes.concept.Event;
  * Created by juanm on 26/07/2017.
  */
 
-public class EventsViewHolder extends RecyclerView.ViewHolder {
+public class MyEventsViewHolder extends RecyclerView.ViewHolder {
 
     private LinearLayout linearLayout;
     private TextView name;
@@ -24,14 +24,14 @@ public class EventsViewHolder extends RecyclerView.ViewHolder {
     private ImageView image;
     private View view;
 
-    public EventsViewHolder(View v) {
+    public MyEventsViewHolder(View v) {
         super(v);
         view = v;
-        name = (TextView) v.findViewById(R.id.eventName);
-        date = (TextView) v.findViewById(R.id.eventDate);
-        capacity = (TextView) v.findViewById(R.id.eventCapacity);
-        image = (ImageView) v.findViewById(R.id.eventImage);
-        linearLayout = (LinearLayout) v.findViewById(R.id.eventListing);
+        name = (TextView) v.findViewById(R.id.myEventName);
+        date = (TextView) v.findViewById(R.id.myEventDate);
+        capacity = (TextView) v.findViewById(R.id.myEventCapacity);
+        image = (ImageView) v.findViewById(R.id.myEventImage);
+        linearLayout = (LinearLayout) v.findViewById(R.id.myEventListing);
     }
 
     public void bind(Event event, final int position) {

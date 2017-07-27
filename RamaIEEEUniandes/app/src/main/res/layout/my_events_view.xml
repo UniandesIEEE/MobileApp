@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/eventListing"
+    android:id="@+id/myEventListing"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
@@ -19,7 +19,7 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/eventName"
+                android:id="@+id/myEventName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="5dp"
@@ -28,7 +28,7 @@
                 android:textStyle="bold" />
 
             <ImageView
-                android:id="@+id/eventImage"
+                android:id="@+id/myEventImage"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:srcCompat="@mipmap/logo_rama" />
@@ -40,7 +40,7 @@
                 android:padding="5dp">
 
                 <TextView
-                    android:id="@+id/titleDate"
+                    android:id="@+id/myTitleDate"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -50,7 +50,7 @@
                     android:textStyle="bold" />
 
                 <TextView
-                    android:id="@+id/titleCapacity"
+                    android:id="@+id/myTitleCapacity"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -67,14 +67,14 @@
                 android:padding="5dp">
 
                 <TextView
-                    android:id="@+id/eventDate"
+                    android:id="@+id/myEventDate"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="TextView" />
 
                 <TextView
-                    android:id="@+id/eventCapacity"
+                    android:id="@+id/myEventCapacity"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"

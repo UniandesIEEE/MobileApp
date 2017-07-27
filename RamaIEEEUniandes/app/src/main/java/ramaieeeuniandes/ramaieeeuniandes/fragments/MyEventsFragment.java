@@ -12,6 +12,9 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import ramaieeeuniandes.ramaieeeuniandes.R;
+import ramaieeeuniandes.ramaieeeuniandes.activities.ActivityRamaMain;
+import ramaieeeuniandes.ramaieeeuniandes.adapters.my_events.MyEventsRecyclerViewAdapter;
+import ramaieeeuniandes.ramaieeeuniandes.adapters.my_events.MyEventsViewHolder;
 
 public class MyEventsFragment extends Fragment {
 
@@ -42,8 +45,8 @@ public class MyEventsFragment extends Fragment {
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        MyInvoiceRecyclerViewAdapter adapter = new MyInvoiceRecyclerViewAdapter(InloudMainActivity.getInvoices());
-        recyclerView = (RecyclerView) view.findViewById(R.id.recycler_my_invoice);
+        MyEventsRecyclerViewAdapter adapter = new MyEventsRecyclerViewAdapter(ActivityRamaMain.getMainUser().getMyEvents());
+        recyclerView = (RecyclerView) view.findViewById(R.id.recycler_my_events);
         LinearLayoutManager layoutManager = new LinearLayoutManager(getContext());
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setAdapter(adapter);

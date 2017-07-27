@@ -16,6 +16,8 @@ public class User {
 
     private Integer score;
 
+    private int image;
+
     private List<Event> myEvents;
 
     private List<Category> myCategories;
@@ -61,6 +63,14 @@ public class User {
 
     public void setScore(Integer score) {
         this.score = score;
+    }
+
+    public int getImage() {
+        return image;
+    }
+
+    public void setImage(int image) {
+        this.image = image;
     }
 
     public List<Event> getMyEvents() {

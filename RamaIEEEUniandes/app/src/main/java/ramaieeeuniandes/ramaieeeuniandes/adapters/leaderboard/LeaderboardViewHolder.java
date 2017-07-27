@@ -1,4 +1,4 @@
-package ramaieeeuniandes.ramaieeeuniandes.adapters.events;
+package ramaieeeuniandes.ramaieeeuniandes.adapters.leaderboard;
 
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
@@ -10,38 +10,33 @@ import java.text.SimpleDateFormat;
 
 import ramaieeeuniandes.ramaieeeuniandes.R;
 import ramaieeeuniandes.ramaieeeuniandes.concept.Event;
+import ramaieeeuniandes.ramaieeeuniandes.concept.User;
 
 /**
  * Created by juanm on 26/07/2017.
  */
 
-public class EventsViewHolder extends RecyclerView.ViewHolder {
+public class LeaderboardViewHolder extends RecyclerView.ViewHolder {
 
     private LinearLayout linearLayout;
     private TextView name;
-    private TextView date;
-    private TextView capacity;
+    private TextView score;
     private ImageView image;
     private View view;
 
-    public EventsViewHolder(View v) {
+    public LeaderboardViewHolder(View v) {
         super(v);
         view = v;
-        name = (TextView) v.findViewById(R.id.eventName);
-        date = (TextView) v.findViewById(R.id.eventDate);
-        capacity = (TextView) v.findViewById(R.id.eventCapacity);
-        image = (ImageView) v.findViewById(R.id.eventImage);
-        linearLayout = (LinearLayout) v.findViewById(R.id.eventListing);
+        name = (TextView) v.findViewById(R.id.lbUserName);
+        score = (TextView) v.findViewById(R.id.lbUserScore);
+        image = (ImageView) v.findViewById(R.id.lbUserImage);
+        linearLayout = (LinearLayout) v.findViewById(R.id.lbListing);
     }
 
-    public void bind(Event event, final int position) {
-        name.setText(event.getName());
-
-        String dDate = new SimpleDateFormat("dd/MM/yyyy").format(event.getDate());
-        date.setText(dDate);
-
-        capacity.setText(""+event.getCapacity());
-        image.setImageResource(event.getImage());
+    public void bind(User user, final int position) {
+        name.setText(user.getName());
+        score.setText(""+user.getScore());
+        image.setImageResource(user.getImage());
 
         /*
         linearLayout.setOnClickListener(new View.OnClickListener(){

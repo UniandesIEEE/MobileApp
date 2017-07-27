@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/eventListing"
+    android:id="@+id/lbListing"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
@@ -18,44 +18,27 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <TextView
-                android:id="@+id/eventName"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:padding="5dp"
-                android:text="Title"
-                android:textSize="18sp"
-                android:textStyle="bold" />
-
-            <ImageView
-                android:id="@+id/eventImage"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:srcCompat="@mipmap/logo_rama" />
-
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:gravity="center_vertical"
                 android:orientation="horizontal"
                 android:padding="5dp">
 
-                <TextView
-                    android:id="@+id/titleDate"
+                <ImageView
+                    android:id="@+id/lbUserImage"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:gravity="center_vertical"
-                    android:text="@string/date"
-                    android:textSize="16sp"
-                    android:textStyle="bold" />
+                    app:srcCompat="@mipmap/ic_launcher_round" />
 
                 <TextView
-                    android:id="@+id/titleCapacity"
+                    android:id="@+id/titleScore"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:gravity="right|center_vertical|center_horizontal"
-                    android:text="@string/capacity"
+                    android:gravity="center_vertical|center_horizontal"
+                    android:text="@string/score"
                     android:textSize="16dp"
                     android:textStyle="bold" />
             </LinearLayout>
@@ -63,22 +46,24 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:gravity="center_vertical"
                 android:orientation="horizontal"
                 android:padding="5dp">
 
                 <TextView
-                    android:id="@+id/eventDate"
+                    android:id="@+id/lbUserName"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:gravity="center_vertical|center_horizontal"
                     android:text="TextView" />
 
                 <TextView
-                    android:id="@+id/eventCapacity"
+                    android:id="@+id/lbUserScore"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:gravity="right|center_vertical"
+                    android:gravity="center_vertical|center_horizontal"
                     android:text="TextView" />
             </LinearLayout>
 

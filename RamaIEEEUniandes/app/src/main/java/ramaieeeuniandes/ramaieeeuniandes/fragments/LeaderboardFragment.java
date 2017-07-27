@@ -10,6 +10,8 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import ramaieeeuniandes.ramaieeeuniandes.R;
+import ramaieeeuniandes.ramaieeeuniandes.activities.ActivityRamaMain;
+import ramaieeeuniandes.ramaieeeuniandes.adapters.leaderboard.LeaderboardRecyclerViewAdapter;
 
 /**
  * Created by juanm on 26/07/2017.
@@ -44,8 +46,8 @@ public class LeaderboardFragment extends Fragment {
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        MyInvoiceRecyclerViewAdapter adapter = new MyInvoiceRecyclerViewAdapter(InloudMainActivity.getInvoices());
-        recyclerView = (RecyclerView) view.findViewById(R.id.recycler_my_invoice);
+        LeaderboardRecyclerViewAdapter adapter = new LeaderboardRecyclerViewAdapter(ActivityRamaMain.getUsers());
+        recyclerView = (RecyclerView) view.findViewById(R.id.recycler_leaderboard);
         LinearLayoutManager layoutManager = new LinearLayoutManager(getContext());
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setAdapter(adapter);
