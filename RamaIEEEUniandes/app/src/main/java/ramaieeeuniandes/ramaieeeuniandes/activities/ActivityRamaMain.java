@@ -1,5 +1,6 @@
 package ramaieeeuniandes.ramaieeeuniandes.activities;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -15,17 +16,24 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TableLayout;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import ramaieeeuniandes.ramaieeeuniandes.R;
+import ramaieeeuniandes.ramaieeeuniandes.ScannerActivity;
 import ramaieeeuniandes.ramaieeeuniandes.adapters.ViewPagerAdapter;
 import ramaieeeuniandes.ramaieeeuniandes.concept.Event;
 import ramaieeeuniandes.ramaieeeuniandes.concept.User;
 
 public class ActivityRamaMain extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
+
+    /**
+     * Constant that models the status of QR result from QR scanner
+     */
+    public static final int QR_CODE_RESULT = 2001;
 
     //Data Management
     private static User mainUser;
@@ -54,8 +62,8 @@ public class ActivityRamaMain extends AppCompatActivity
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+                Intent intent = new Intent(ActivityRamaMain.this, ScannerActivity.class);
+                startActivityForResult(intent, QR_CODE_RESULT);
             }
         });
 
@@ -138,6 +146,17 @@ public class ActivityRamaMain extends AppCompatActivity
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if (requestCode == QR_CODE_RESULT) {
+            if (resultCode == RESULT_OK) {
+                //Gets the scanned QR code
+                String url = data.getData().toString();
+                Toast.makeText(this, url, Toast.LENGTH_LONG).show();
+            }
+        }
     }
 
     public static List<Event> getEvents(){
