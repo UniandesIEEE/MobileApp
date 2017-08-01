@@ -16,7 +16,7 @@ public class User {
 
     private Integer score;
 
-    private int image;
+    private Integer image;
 
     private List<Event> myEvents;
 
@@ -26,11 +26,12 @@ public class User {
 
     }
 
-    public User(Long id, String name, String login, Integer score) {
+    public User(Long id, String name, String login, Integer score, Integer image) {
         this.id = id;
         this.name = name;
         this.login = login;
         this.score = score;
+        this.image = image;
     }
 
     public Long getId() {
@@ -79,6 +80,10 @@ public class User {
 
     public void setMyEvents(List<Event> myEvents) {
         this.myEvents = myEvents;
+    }
+
+    public void addEvent(Event event){
+        myEvents.add(event);
     }
 
     public List<Category> getMyCategories() {

@@ -3,7 +3,6 @@ package ramaieeeuniandes.ramaieeeuniandes.activities;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
 import android.view.View;
@@ -15,14 +14,13 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.TableLayout;
 import android.widget.Toast;
 
+import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.List;
 
 import ramaieeeuniandes.ramaieeeuniandes.R;
-import ramaieeeuniandes.ramaieeeuniandes.ScannerActivity;
 import ramaieeeuniandes.ramaieeeuniandes.adapters.ViewPagerAdapter;
 import ramaieeeuniandes.ramaieeeuniandes.concept.Event;
 import ramaieeeuniandes.ramaieeeuniandes.concept.User;
@@ -80,7 +78,8 @@ public class ActivityRamaMain extends AppCompatActivity
         users = new ArrayList<>();
         mainUser = new User();
         events = new ArrayList<>();
-        mainUser.setMyEvents(events);
+        mainUser.setMyEvents(new ArrayList<Event>());
+        initializeDummyData();
 
         //UI Management
 
@@ -148,6 +147,18 @@ public class ActivityRamaMain extends AppCompatActivity
         return true;
     }
 
+    public static List<Event> getEvents(){
+        return events;
+    }
+
+    public static List<User> getUsers(){
+        return users;
+    }
+
+    public static User getMainUser() {
+        return mainUser;
+    }
+
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (requestCode == QR_CODE_RESULT) {
@@ -159,15 +170,33 @@ public class ActivityRamaMain extends AppCompatActivity
         }
     }
 
-    public static List<Event> getEvents(){
-        return events;
-    }
+    /**
+     * Method that initializes dummy data for testing app features
+     */
+    private void initializeDummyData() {
 
-    public static List<User> getUsers(){
-        return users;
-    }
+        User user = new User((long)0,"John Doe","j.doe",100,R.mipmap.ic_prof_pic);
+        users.add(user);
+        user = new User((long)1,"Bob","bob",200,R.mipmap.ic_prof_pic);
+        users.add(user);
+        user = new User((long)2,"Alice","alice",50,R.mipmap.ic_prof_pic);
+        users.add(user);
+        user = new User((long)3,"Jeff","jeff",300,R.mipmap.ic_prof_pic);
+        users.add(user);
 
-    public static User getMainUser() {
-        return mainUser;
+        Event event = new Event((long)0,"Taller de Soldadura",
+                new Timestamp(System.currentTimeMillis()+2000),"ML 004",25,"Aprende a soldar",R.mipmap.logo_rama_negativo_rend);
+        events.add(event);
+        event = new Event((long)1,"IEEExtreme",
+                new Timestamp(System.currentTimeMillis()+3000),"ML 026",30,"Code",R.mipmap.logo_rama_negativo_rend);
+        events.add(event);
+        event = new Event((long)2,"Taller de Soldadura",
+                new Timestamp(System.currentTimeMillis()+2000),"ML 004",25,"Aprende a soldar",R.mipmap.logo_rama_negativo_rend);
+        events.add(event);
+        event = new Event((long)3,"IEEExtreme",
+                new Timestamp(System.currentTimeMillis()+3000),"ML 026",30,"Code",R.mipmap.logo_rama_negativo_rend);
+        events.add(event);
+
+        mainUser.addEvent(event);
     }
 }

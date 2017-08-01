@@ -20,7 +20,7 @@ public class Event {
 
     private String description;
 
-    private int image;
+    private Integer image;
 
     public Event() {
     }

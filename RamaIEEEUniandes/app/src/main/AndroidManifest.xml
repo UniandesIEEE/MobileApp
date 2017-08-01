@@ -25,7 +25,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".ScannerActivity"
+            android:name=".activities.ScannerActivity"
             android:theme="@android:style/Theme.Holo.Light.NoActionBar"></activity>
     </application>
 

@@ -1,4 +1,4 @@
-package ramaieeeuniandes.ramaieeeuniandes;
+package ramaieeeuniandes.ramaieeeuniandes.activities;
 
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -134,4 +134,5 @@ public class ScannerActivity extends FragmentActivity implements ZXingScannerVie
         super.onDestroy();
         scannerView.stopCamera();
     }
+
 }
