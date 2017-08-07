@@ -22,10 +22,12 @@ public class Event {
 
     private Integer image;
 
+    private Integer chapterImage;
+
     public Event() {
     }
 
-    public Event(Long id, String name, Timestamp date, String place, Integer capacity, String description,int image) {
+    public Event(Long id, String name, Timestamp date, String place, Integer capacity, String description,Integer image, Integer chapterImage) {
         this.id = id;
         this.name = name;
         this.date = date;
@@ -33,6 +35,7 @@ public class Event {
         this.capacity = capacity;
         this.description = description;
         this.image = image;
+        this.chapterImage = chapterImage;
     }
 
     public Long getId() {
@@ -83,11 +86,19 @@ public class Event {
         this.description = description;
     }
 
-    public int getImage() {
+    public Integer getImage() {
         return image;
     }
 
-    public void setImage(int image) {
+    public void setImage(Integer image) {
         this.image = image;
+    }
+
+    public Integer getChapterImage() {
+        return chapterImage;
+    }
+
+    public void setChapterImage(Integer chapterImage) {
+        this.chapterImage = chapterImage;
     }
 }

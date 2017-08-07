@@ -185,16 +185,24 @@ public class ActivityRamaMain extends AppCompatActivity
         users.add(user);
 
         Event event = new Event((long)0,"Taller de Soldadura",
-                new Timestamp(System.currentTimeMillis()+2000),"ML 004",25,"Aprende a soldar",R.mipmap.logo_rama_negativo_rend);
+                new Timestamp(System.currentTimeMillis()+20000),"ML 004",25,
+                "Aprende a soldar",R.mipmap.logo_rama_negativo_rend,R.mipmap.logo_rama_sqd);
         events.add(event);
         event = new Event((long)1,"IEEExtreme",
-                new Timestamp(System.currentTimeMillis()+3000),"ML 026",30,"Code",R.mipmap.logo_rama_negativo_rend);
+                new Timestamp(System.currentTimeMillis()+30000),"ML 026",30,
+                "Code",R.mipmap.logo_rama_negativo_rend,R.mipmap.logo_computer_sqd);
         events.add(event);
-        event = new Event((long)2,"Taller de Soldadura",
-                new Timestamp(System.currentTimeMillis()+2000),"ML 004",25,"Aprende a soldar",R.mipmap.logo_rama_negativo_rend);
+        event = new Event((long)3,"PEPQA",
+                new Timestamp(System.currentTimeMillis()+40000),"ML 026",130,
+                "Code",R.mipmap.logo_rama_negativo_rend,R.mipmap.logo_ias_sqd);
         events.add(event);
-        event = new Event((long)3,"IEEExtreme",
-                new Timestamp(System.currentTimeMillis()+3000),"ML 026",30,"Code",R.mipmap.logo_rama_negativo_rend);
+        event = new Event((long)2,"WIE Roadshow",
+                new Timestamp(System.currentTimeMillis()+50000),"ML 004",25,
+                "Aprende a soldar",R.mipmap.logo_rama_negativo_rend,R.mipmap.logo_wie_sqd);
+        events.add(event);
+        event = new Event((long)3,"Cazucá",
+                new Timestamp(System.currentTimeMillis()+60000),"ML 026",30,
+                "Code",R.mipmap.logo_rama_negativo_rend,R.mipmap.logo_css_sqd);
         events.add(event);
 
         mainUser.addEvent(event);

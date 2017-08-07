@@ -1,5 +1,7 @@
 package ramaieeeuniandes.ramaieeeuniandes.adapters.my_events;
 
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.ImageView;
@@ -9,6 +11,7 @@ import android.widget.TextView;
 import java.text.SimpleDateFormat;
 
 import ramaieeeuniandes.ramaieeeuniandes.R;
+import ramaieeeuniandes.ramaieeeuniandes.adapters.RoundImage;
 import ramaieeeuniandes.ramaieeeuniandes.concept.Event;
 
 /**
@@ -22,6 +25,7 @@ public class MyEventsViewHolder extends RecyclerView.ViewHolder {
     private TextView date;
     private TextView capacity;
     private ImageView image;
+    private ImageView chapterImage;
     private View view;
 
     public MyEventsViewHolder(View v) {
@@ -31,6 +35,7 @@ public class MyEventsViewHolder extends RecyclerView.ViewHolder {
         date = (TextView) v.findViewById(R.id.myEventDate);
         capacity = (TextView) v.findViewById(R.id.myEventCapacity);
         image = (ImageView) v.findViewById(R.id.myEventImage);
+        chapterImage = (ImageView) v.findViewById(R.id.myChapterImage);
         linearLayout = (LinearLayout) v.findViewById(R.id.myEventListing);
     }
 
@@ -42,6 +47,10 @@ public class MyEventsViewHolder extends RecyclerView.ViewHolder {
 
         capacity.setText(""+event.getCapacity());
         image.setImageResource(event.getImage());
+
+        Bitmap bm = BitmapFactory.decodeResource(view.getResources(),event.getChapterImage());
+        RoundImage roundedImage = new RoundImage(bm);
+        chapterImage.setImageDrawable(roundedImage);
 
         /*
         linearLayout.setOnClickListener(new View.OnClickListener(){
