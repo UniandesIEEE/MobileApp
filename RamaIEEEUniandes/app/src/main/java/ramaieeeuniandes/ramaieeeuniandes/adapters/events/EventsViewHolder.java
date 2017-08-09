@@ -11,6 +11,7 @@ import android.widget.TextView;
 import java.text.SimpleDateFormat;
 
 import ramaieeeuniandes.ramaieeeuniandes.R;
+import ramaieeeuniandes.ramaieeeuniandes.activities.ActivityRamaMain;
 import ramaieeeuniandes.ramaieeeuniandes.adapters.RoundImage;
 import ramaieeeuniandes.ramaieeeuniandes.concept.Event;
 
@@ -52,18 +53,16 @@ public class EventsViewHolder extends RecyclerView.ViewHolder {
         RoundImage roundedImage = new RoundImage(bm);
         chapterImage.setImageDrawable(roundedImage);
 
-        /*
         linearLayout.setOnClickListener(new View.OnClickListener(){
 
             @Override
             public void onClick(View view) {
-                if(view.getContext()instanceof InloudMainActivity){
-                    InloudMainActivity main = (InloudMainActivity) view.getContext();
-                    main.startInvoiceDetail(position);
+                if(view.getContext()instanceof ActivityRamaMain){
+                    ActivityRamaMain main = (ActivityRamaMain) view.getContext();
+                    main.startEventDetail(position);
                 }
             }
         });
-        */
     }
 
 }

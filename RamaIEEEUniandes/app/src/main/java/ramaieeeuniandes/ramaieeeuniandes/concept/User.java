@@ -1,12 +1,13 @@
 package ramaieeeuniandes.ramaieeeuniandes.concept;
 
+import java.io.Serializable;
 import java.util.List;
 
 /**
  * Created by juanm on 26/07/2017.
  */
 
-public class User {
+public class User implements Serializable{
 
     private Long id;
 

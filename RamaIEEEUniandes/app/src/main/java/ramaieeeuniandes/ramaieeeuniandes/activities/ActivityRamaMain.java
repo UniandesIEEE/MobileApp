@@ -171,6 +171,16 @@ public class ActivityRamaMain extends AppCompatActivity
     }
 
     /**
+     * Method that initializes a new detailed activity for an event
+     * @param position in which the event is located at the fragment
+     */
+    public void startEventDetail(int position) {
+        Intent intent = new Intent(ActivityRamaMain.this, EventDetailActivity.class);
+        intent.putExtra("invoice", events.get(position));
+        startActivity(intent);
+    }
+
+    /**
      * Method that initializes dummy data for testing app features
      */
     private void initializeDummyData() {

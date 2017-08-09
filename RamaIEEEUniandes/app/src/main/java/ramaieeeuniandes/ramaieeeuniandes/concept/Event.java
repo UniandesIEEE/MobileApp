@@ -1,12 +1,13 @@
 package ramaieeeuniandes.ramaieeeuniandes.concept;
 
+import java.io.Serializable;
 import java.sql.Timestamp;
 
 /**
  * Created by juanm on 26/07/2017.
  */
 
-public class Event {
+public class Event implements Serializable{
 
     private Long id;
 

@@ -1,10 +1,12 @@
 package ramaieeeuniandes.ramaieeeuniandes.concept;
 
+import java.io.Serializable;
+
 /**
  * Created by juanm on 26/07/2017.
  */
 
-public class Category {
+public class Category implements Serializable{
 
     private Long id;
 
